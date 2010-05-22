@@ -1,0 +1,6 @@
+; $Id$
+name = Views Flipped Table
+description = Table style with rows and columns flipped.
+package = Views
+core = 6.x
+dependencies[] = views
