@@ -33,7 +33,7 @@
 
   <?php if ($first):?>
   <thead>
-    <tr class="<? echo $element; ?>">
+    <tr class="<?php echo $element; ?>">
       <th>
       </th>
       <?php foreach($row['title'] as $title): ?>
