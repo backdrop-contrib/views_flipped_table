@@ -1,5 +1,4 @@
 <?php
-// $Id$
 /**
  * @file views-flipped-table.tpl.php
  * Template to display a view as a table with rows and columns flipped.

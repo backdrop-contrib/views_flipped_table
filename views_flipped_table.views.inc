@@ -1,5 +1,4 @@
 <?php
-// $Id$
 /**
  * @file views_flipped_table.views.inc
  * Contains the flipped table style plugin, flipping rows and columns.
