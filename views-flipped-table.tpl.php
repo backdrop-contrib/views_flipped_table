@@ -6,7 +6,7 @@
  * - $title : The title of this group of rows.  May be empty.
  * - $header: An array of header labels keyed by field id.
  * - $fields: An array of CSS IDs to use for each field id.
- * - $class: A class or classes to apply to the table, based on settings.
+ * - $classes: A class or classes to apply to the table, based on settings.
  * - $row_classes: An array of classes to apply to each row, indexed by row
  *   number. This matches the index in $rows.
  * - $rows: An array of row items. Each row is an array of content.
@@ -26,7 +26,7 @@
   $first = isset($row['title']);
   $element = 'odd';
 ?>
-<table class="<?php print $class; ?>">
+<table class="<?php print $classes; ?>">
   <?php if (!empty($title)) : ?>
     <caption><?php print $title; ?></caption>
   <?php endif; ?>
