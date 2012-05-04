@@ -18,8 +18,8 @@
 <?php
   // Flip the table.
   $row = array();
-  foreach ($rows as $col){
-    foreach ($col as $ltr => $value){
+  foreach ($rows as $col) {
+    foreach ($col as $ltr => $value) {
       $row[$ltr][] = $value;
     }
   }
@@ -32,17 +32,17 @@
   <?php endif; ?>
 
   <?php if ($first) : ?>
-  <thead>
-    <tr class="<?php echo $element; ?>">
-      <th>
-      </th>
-      <?php foreach ($row['title'] as $title) : ?>
-      <th>
-      <?php echo $title; ?>
-      </th>
-      <?php endforeach; ?>
-    </tr>
-  </thead>
+    <thead>
+      <tr class="<?php echo $element; ?>">
+        <th>
+        </th>
+        <?php foreach ($row['title'] as $title) : ?>
+          <th>
+          <?php echo $title; ?>
+          </th>
+        <?php endforeach; ?>
+      </tr>
+    </thead>
   <?php  
     $first = FALSE;
     endif; //$first
@@ -51,20 +51,21 @@
   <tbody>
     <?php foreach ($row as $field => $rowname) : ?>
       <?php if ($field != 'title') : ?>
-      <tr class="<? echo $element; ?>">
-        <th>
-          <?php echo $header[$field]; ?>
-        </th>
-      <?php foreach ($rowname as $count => $item): ?>
-        <td>
-          <?php echo $item; ?>
-        </td>
-      <?php endforeach; ?>
-      </tr>
+        <tr class="<? echo $element; ?>">
+          <th>
+            <?php echo $header[$field]; ?>
+          </th>
+          <?php foreach ($rowname as $count => $item): ?>
+            <td>
+              <?php echo $item; ?>
+            </td>
+          <?php endforeach; ?>
+        </tr>
       <?php
-        if ($element == 'odd'){
+        if ($element == 'odd') {
           $element = 'even';
-        } else {
+        }
+        else {
           $element = 'odd';
         }
       ?>
