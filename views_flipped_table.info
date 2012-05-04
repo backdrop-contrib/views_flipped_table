@@ -7,3 +7,4 @@ dependencies[] = views
 files[] = views_flipped_table.module
 files[] = views_flipped_table.views.inc
 files[] = views_flipped_table.module
+files[] = views_flipped_table_plugin_style_flipped_table.inc
