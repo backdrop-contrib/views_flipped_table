@@ -9,7 +9,7 @@
  */
 function views_flipped_table_views_api() {
   return array(
-    'api' => 2.0,
+    'api' => 3.0,
   );
 }
 
