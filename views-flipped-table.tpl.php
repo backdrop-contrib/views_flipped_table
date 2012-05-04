@@ -51,7 +51,7 @@
   <tbody>
     <?php foreach ($row as $field => $rowname) : ?>
       <?php if ($field != 'title') : ?>
-        <tr class="<? echo $element; ?>">
+        <tr class="<?php echo $element; ?>">
           <th>
             <?php echo $header[$field]; ?>
           </th>
