@@ -27,7 +27,7 @@
     <caption><?php print $title; ?></caption>
   <?php endif; ?>
 
-  <?php if ($header_row) : ?>
+  <?php if (!empty($header_row)) : ?>
     <thead>
       <tr>
         <th>
