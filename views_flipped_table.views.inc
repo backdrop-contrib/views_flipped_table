@@ -20,7 +20,6 @@ function views_flipped_table_views_plugins() {
         'uses options' => TRUE,
         'type' => 'normal',
         'theme' => 'views_flipped_table',
-        'even empty' => TRUE,
       ),
     ),
   );
