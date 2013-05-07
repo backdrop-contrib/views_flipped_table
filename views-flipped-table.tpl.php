@@ -30,11 +30,11 @@
            <?php $field_name = array_keys($rows_flipped)[0]; ?>
     <thead>
       <tr>
-        <th>
+        <th class="<?php print($header_classes[$field_name]); ?>">
           <?php print $header[$field_name] ?>
         </th>
-        <?php foreach ($rows_flipped[$field_name] as $item) : ?>
-          <th>
+        <?php foreach ($rows_flipped[$field_name] as $index => $item) : ?>
+          <th class="<?php print($field_classes[$field_name][$index]); ?>">
             <?php print $item; ?>
           </th>
         <?php endforeach; ?>
@@ -45,11 +45,11 @@
   <tbody>
     <?php foreach ($rows_flipped as $field_name => $row) : ?>
       <tr class="<?php print $row_classes_flipped[$field_name]; ?>">
-        <th>
+        <th class="<?php print($header_classes[$field_name]); ?>">
           <?php echo $header[$field_name]; ?>
         </th>
         <?php foreach ($row as $index => $item): ?>
-          <td>
+          <td class="<?php print($field_classes[$field_name][$index]); ?>">
             <?php echo $item; ?>
           </td>
         <?php endforeach; ?>
