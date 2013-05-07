@@ -29,16 +29,12 @@ function template_preprocess_views_flipped_table(&$vars) {
   }
 
   // Determine if the first row is to be shown as a table header.
-  $first_field_header = $vars['view']->style_plugin->options['flipped_table_header_first_field'];
-  if ($first_field_header) {
-    // Remove the first row to make the header.
-    $vars['header_row'] = array_shift($vars['rows_flipped']);
-  }
+  $vars['first_row_header'] = (boolean) $vars['view']->style_plugin->options['flipped_table_header_first_field'];
 
   // Set up classes for odd and even rows.
   $count = 0;
   foreach ($vars['rows_flipped'] as $field_name => $row) {
-    $vars['row_classes_flipped'][$field_name] = ($count++ % 2 == 0) ? 'odd' : 'even';
+    $vars['row_classes_flipped'][$field_name] = ($count++ % 2 == 0) ? 'even' : 'odd';
   }
 
 }

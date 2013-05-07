@@ -16,9 +16,8 @@
  *   by the original row number.
  * - $row_classes_flipped: An array of classes to apply to each flipped row,
  *   indexed by the field name.
- * - $header_row: An array containing the first of the flipped rows, if this is
- *   to be shown as a table header.
- *   
+ * - $first_row_header: boolean indicating the first row is a table header.
+ *
  * @ingroup views_templates
  */
 ?>
@@ -27,19 +26,22 @@
     <caption><?php print $title; ?></caption>
   <?php endif; ?>
 
-  <?php if (!empty($header_row)) : ?>
+  <?php if ($first_row_header) : ?>
+           <?php $field_name = array_keys($rows_flipped)[0]; ?>
     <thead>
       <tr>
         <th>
+          <?php print $header[$field_name] ?>
         </th>
-        <?php foreach ($header_row as $item) : ?>
+        <?php foreach ($rows_flipped[$field_name] as $item) : ?>
           <th>
             <?php print $item; ?>
           </th>
         <?php endforeach; ?>
       </tr>
     </thead>
-  <?php endif; //$header_row ?>
+    <?php array_shift($rows_flipped); ?>
+  <?php endif; // $first_row_header ?>
   <tbody>
     <?php foreach ($rows_flipped as $field_name => $row) : ?>
       <tr class="<?php print $row_classes_flipped[$field_name]; ?>">
