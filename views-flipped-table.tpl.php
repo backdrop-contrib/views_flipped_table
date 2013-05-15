@@ -27,7 +27,8 @@
   <?php endif; ?>
 
   <?php if ($first_row_header) : ?>
-           <?php $field_name = array_keys($rows_flipped)[0]; ?>
+    <?php $field_names = array_keys($rows_flipped);
+          $field_name = reset($field_names); ?>
     <thead>
       <tr>
         <th class="<?php print($header_classes[$field_name]); ?>">
