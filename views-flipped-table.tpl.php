@@ -14,7 +14,11 @@
  * - $rows_flipped: An array of row items, with the original data flipped.
  *   $rows_flipped are keyed by field name, each item within a row is keyed
  *   by the original row number.
- * - $row_classes_flipped: An array of classes to apply to each flipped row,
+ * - $wrapper_classes: An array of classes to apply to each flipped row,
+ *   indexed by the field name.
+ * - $header_classes: An array of classes to apply to each row header,
+ *   indexed by the field name.
+ * - $field_classes: An array of classes to apply to each cell,
  *   indexed by the field name.
  * - $first_row_header: boolean indicating the first row is a table header.
  *
@@ -30,7 +34,7 @@
     <?php $field_names = array_keys($rows_flipped);
           $field_name = reset($field_names); ?>
     <thead>
-      <tr>
+      <tr class="<?php print($wrapper_classes[$field_name]); ?>">
         <th class="<?php print($header_classes[$field_name]); ?>">
           <?php print $header[$field_name] ?>
         </th>
@@ -45,7 +49,7 @@
   <?php endif; // $first_row_header ?>
   <tbody>
     <?php foreach ($rows_flipped as $field_name => $row) : ?>
-      <tr class="<?php print $row_classes_flipped[$field_name]; ?>">
+      <tr class="<?php print $wrapper_classes[$field_name]; ?>">
         <th class="<?php print($header_classes[$field_name]); ?>">
           <?php echo $header[$field_name]; ?>
         </th>
