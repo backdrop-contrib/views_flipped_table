@@ -13,11 +13,6 @@ For a full description of the module, visit the project page:
 To submit bug reports and feature suggestions, or to track changes:
   http://drupal.org/project/issues/views_flipped_table
 
-<h2>Installation and use:</h2>
-<ul><li>Install the module and enable it in the usual way.</li>
-<li>Create a view, and select the "Flipped table" format.</li>
-
-
 REQUIREMENTS
 ------------
 
@@ -38,6 +33,11 @@ CUSTOMIZATION
 -------------
 
 CSS can be customised in the same manner as a normal views table.
+
+### Related modules
+
+* [Views Flipped Table](https://drupal.org/project/views_flipped_table) allows
+  arbitrary row groups to be hidden using [jQueryUI accordion](http://jqueryui.com/accordion/).
 
 CONTACT
 ------
