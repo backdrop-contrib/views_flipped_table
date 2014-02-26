@@ -54,7 +54,9 @@
           <?php echo $header[$field_name]; ?>
         </th>
         <?php foreach ($row as $index => $item): ?>
-          <td class="<?php print($field_classes[$field_name][$index]); ?>">
+          <td class="<?php if (isset($field_classes[$field_name][$index])) : ?>
+                <?php print($field_classes[$field_name][$index]); ?>
+              <?php endif; ?>">
             <?php echo $item; ?>
           </td>
         <?php endforeach; ?>
