@@ -45,9 +45,9 @@ function template_preprocess_views_flipped_table(&$vars) {
 
   // Flip the table.
   $vars['rows_flipped'] = array();
-  foreach ($vars['rows'] as $col) {
+  foreach ($vars['rows'] as $key => $col) {
     foreach ($col as $ltr => $value) {
-      $vars['rows_flipped'][$ltr][] = $value;
+      $vars['rows_flipped'][$ltr][$key] = $value;
     }
   }
 
