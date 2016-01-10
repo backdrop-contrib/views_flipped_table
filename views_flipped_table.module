@@ -20,6 +20,11 @@ function template_preprocess_views_flipped_table(&$vars) {
   // Let the base table preprocessor act first.
   template_preprocess_views_view_table($vars);
 
+  // If views_fieldsets is enabled run its preprocess function
+  if (module_exists('views_fieldsets')) {
+    views_fieldsets_preprocess_views_view_table($vars);
+  }
+
   // Get wrapper fields for table rows (this is inconsistent with standard views
   // table, which ignores the rows. See https://drupal.org/node/1122130
   $view     = $vars['view'];
