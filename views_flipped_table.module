@@ -56,6 +56,20 @@ function template_preprocess_views_flipped_table(&$vars) {
     }
   }
 
+  // Remove rows if the option hide empty column is checked and the field is empty.
+  foreach ($vars['rows_flipped'] as $ltr => $columns) {
+    if (!empty($options['info'][$ltr]['empty_column'])) {
+      $empty = TRUE;
+      foreach ($columns as $column) {
+        $empty &= empty($column);
+      }
+      if ($empty) {
+        unset($vars['rows_flipped'][$ltr]);
+        unset($vars['header'][$ltr]);
+      }
+    }
+  }
+
   // Determine if the first row is to be shown as a table header.
   $vars['first_row_header'] = (boolean) $vars['view']->style_plugin->options['flipped_table_header_first_field'];
 
