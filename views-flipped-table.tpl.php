@@ -30,18 +30,20 @@
     <caption><?php print $title; ?></caption>
   <?php endif; ?>
 
-  <?php if ($first_row_header) : ?>
-    <?php $field_names = array_keys($rows_flipped);
-          $field_name = reset($field_names); ?>
+  <?php
+    if ($first_row_header) :
+      $field_names = array_keys($rows_flipped);
+      $field_name = reset($field_names);
+    ?>
     <thead>
-      <tr class="<?php print($wrapper_classes[$field_name]); ?>">
+      <tr class="<?php print $wrapper_classes[$field_name]; ?>">
         <?php if (isset($header[$field_name])) : ?>
-        <th class="<?php print($header_classes[$field_name]); ?>">
-          <?php print $header[$field_name] ?>
-        </th>
+          <th class="<?php print $header_classes[$field_name]; ?>">
+            <?php print $header[$field_name]; ?>
+          </th>
         <?php endif; // header name ?>
         <?php foreach ($rows_flipped[$field_name] as $index => $item) : ?>
-          <th class="<?php print($field_classes[$field_name][$index]); ?>">
+          <th class="<?php print $field_classes[$field_name][$index]; ?>">
             <?php print $item; ?>
           </th>
         <?php endforeach; ?>
@@ -53,12 +55,12 @@
     <?php foreach ($rows_flipped as $field_name => $row) : ?>
       <tr class="<?php print $wrapper_classes[$field_name]; ?>">
         <?php if (isset($header[$field_name])) : ?>
-        <th class="<?php print($header_classes[$field_name]); ?>">
-          <?php echo $header[$field_name]; ?>
-        </th>
+          <th class="<?php print $header_classes[$field_name]; ?>">
+            <?php echo $header[$field_name]; ?>
+          </th>
         <?php endif; // header name ?>
         <?php foreach ($row as $index => $item): ?>
-          <td class="<?php if (isset($field_classes[$field_name][$index])) { print($field_classes[$field_name][$index]);} ?>">
+          <td class="<?php if (isset($field_classes[$field_name][$index])) { print $field_classes[$field_name][$index]; } ?>">
             <?php echo $item; ?>
           </td>
         <?php endforeach; ?>
@@ -66,4 +68,3 @@
     <?php endforeach; ?>
   </tbody>
 </table>
-
