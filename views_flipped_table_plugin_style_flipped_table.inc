@@ -39,5 +39,9 @@ class views_flipped_table_plugin_style_flipped_table extends views_plugin_style_
       '#type' => 'checkbox',
       '#default_value' => $this->options['column_class_special'],
     );
+
+    // Rename "Row class" to "Column class"
+    $form['row_class']['#title'] = t('Column class');
+    $form['row_class']['#description'] = t('The class to provide on each column. You may use field tokens from as per the "Replacement patterns" used in "Rewrite the output of this field" for all fields.');
   }
 }

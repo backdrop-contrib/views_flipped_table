@@ -91,10 +91,6 @@ function template_preprocess_views_flipped_table(&$vars) {
       }
     }
 
-    if ($row_class = $view->style_plugin->get_row_class($field_name)) {
-      $vars['wrapper_classes'][$field_name][] = $row_class;
-    }
-
     // Flatten the classes to a string for each row for the template file.
     $vars['wrapper_classes'][$field_name] = isset($vars['wrapper_classes'][$field_name]) ? implode(' ', $vars['wrapper_classes'][$field_name]) : '';
   }
@@ -102,12 +98,13 @@ function template_preprocess_views_flipped_table(&$vars) {
   // Set up field striping values
   $column_class_special = isset($options['column_class_special']) ? $options['column_class_special'] : FALSE;
 
-  if ($column_class_special) {
-    foreach ($vars['field_classes'] as $field_name => $field_column) {
-      $count = 0;
-      $max = count($field_column);
-      foreach ($field_column as $index => $column) {
-        $count++;
+  foreach ($vars['field_classes'] as $field_name => $field_column) {
+    $count = 0;
+    $max = count($field_column);
+    foreach ($field_column as $index => $column) {
+      $count++;
+
+      if ($column_class_special) {
         $vars['field_classes'][$field_name][$index] .= ' views-column-' . ($count % 2 ? 'odd' : 'even');
         if ($count == 1) {
           $vars['field_classes'][$field_name][$index] .= ' views-column-first';
@@ -115,6 +112,10 @@ function template_preprocess_views_flipped_table(&$vars) {
         if ($count == $max) {
           $vars['field_classes'][$field_name][$index] .= ' views-column-last';
         }
+      }
+
+      if ($row_class = $view->style_plugin->get_row_class($index)) {
+        $vars['field_classes'][$field_name][$index] .= ' ' . $row_class;
       }
     }
   }
