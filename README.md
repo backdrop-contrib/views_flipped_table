@@ -1,25 +1,25 @@
 Views Flipped Table
 ===================
 
-This module provides a views table style with rows and columns flipped.
+This module provides a views table style with the rows and columns flipped.
 
-This is useful for views showing few entities with many fields, such as product
-comparison.
+This is useful for views showing a few entities with many fields, such as a
+product comparison.
 
-More information can be found on the project page at
+More information about the project can be found on the project page at
 https://github.com/backdrop-contrib/views_flipped_table
 
 
 Installation
 ------------
 
-- This module requires the Views module to be enabled.
+This module requires the Views module to be enabled.
 
-- Install this module using the official Backdrop CMS instructions at
-  https://backdropcms.org/guide/modules.
+Install this module using the official Backdrop CMS instructions at
+https://backdropcms.org/guide/modules.
 
-- Create a view using the "Flipped table" style, and add all the required
-  fields.
+Add a new view using the "Flipped table" style and edit the view as you would
+normally do for a Table style view.
 
 
 Customization
@@ -32,14 +32,8 @@ To add alternating striping to the columns, add styling to these CSS elements:
 - td.views-column-last
 - td.views-column-odd
 - td.views-column-even
+
 See the css/views_flipped_table.css file for an example.
-
-
-Documentation
--------------
-
-Additional documentation is located in the Wiki:
-https://github.com/backdrop-contrib/views_flipped_table/wiki/Documentation.
 
 
 Issues
@@ -60,7 +54,7 @@ Credits
 -------
 
 - Ported to Backdrop CMS by [Jason Flatt](https://github.com/oadaeh)
-- Originally written for Drupal As part of
+- Originally written for Drupal as part of
   [Views Hacks](https://www.drupal.org/project/views_hacks) by:
   - [nadam](https://www.drupal.org/user/113494) and
   - [infojunkie](https://www.drupal.org/user/48424)
