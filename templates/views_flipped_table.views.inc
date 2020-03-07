@@ -1,11 +1,12 @@
 <?php
+
 /**
- * @file views_flipped_table.views.inc
- * Contains the flipped table style plugin, flipping rows and columns.
+ * @file
+ * Defines the Flipped table style plugin, flipping rows and columns.
  */
 
 /**
- * Implementation of hook_views_plugins().
+ * Implements hook_views_plugins().
  */
 function views_flipped_table_views_plugins() {
   return array(

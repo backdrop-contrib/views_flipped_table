@@ -1,48 +1,75 @@
-SUMMARY
-=======
+Views Flipped Table
+===================
 
 This module provides a views table style with rows and columns flipped.
-This is useful for views showing few entities with many fields, such as product comparison.
 
-The module was originally developed by [nadam](http://drupal.org/user/113494)
-and [infojunkie](http://drupal.org/user/48424), as part of [Views Hacks](http://drupal.org/project/views_hacks).
+This is useful for views showing few entities with many fields, such as product
+comparison.
 
-For a full description of the module, visit the project page:
-  http://drupal.org/project/views_flipped_table
+More information can be found on the project page at
+https://github.com/backdrop-contrib/views_flipped_table
 
-To submit bug reports and feature suggestions, or to track changes:
-  http://drupal.org/project/issues/views_flipped_table
 
-REQUIREMENTS
+Installation
 ------------
 
-Install [Views](https://drupal.org/project/views).
+- This module requires the Views module to be enabled.
 
-INSTALLATION
-------------
+- Install this module using the official Backdrop CMS instructions at
+  https://backdropcms.org/guide/modules.
 
-* Install and enable the module in [the usual way](http://drupal.org/node/70151).
-
-CONFIGURATION
--------------
-
-* Create a view using the "Views Flipped Table" style, and add all the required
+- Create a view using the "Flipped table" style, and add all the required
   fields.
 
-CUSTOMIZATION
+
+Customization
 -------------
 
-CSS can be customised in the same manner as a normal views table.
+The CSS can be customized in the same manner as a normal views table.
 
-### Related modules
+To add alternating striping to the columns, add styling to these CSS elements:
+- td.views-column-first
+- td.views-column-last
+- td.views-column-odd
+- td.views-column-even
+See the css/views_flipped_table.css file for an example.
 
-* [Views Flipped Table](https://drupal.org/project/views_flipped_table) allows
-  arbitrary row groups to be hidden using [jQueryUI accordion](http://jqueryui.com/accordion/).
 
-CONTACT
+Documentation
+-------------
+
+Additional documentation is located in the Wiki:
+https://github.com/backdrop-contrib/views_flipped_table/wiki/Documentation.
+
+
+Issues
 ------
 
-Current maintainers:
+Bugs and Feature requests should be reported in the Issue Queue:
+https://github.com/backdrop-contrib/views_flipped_table/issues
 
-* naught101 - http://drupal.org/user/44216
 
+Current Maintainers
+-------------------
+
+- [Jason Flatt](https://github.com/oadaeh)
+- You?
+
+
+Credits
+-------
+
+- Ported to Backdrop CMS by [Jason Flatt](https://github.com/oadaeh)
+- Originally written for Drupal As part of
+  [Views Hacks](https://www.drupal.org/project/views_hacks) by:
+  - [nadam](https://www.drupal.org/user/113494) and
+  - [infojunkie](https://www.drupal.org/user/48424)
+- Currently maintained for Drupal by [naught101](https://www.drupal.org/user/44216)
+- Drupal work sponsored by [Relinc](http://www.relinc.it)
+
+
+License
+-------
+
+This project is GPL v2 software.
+See the LICENSE.txt file in this directory for complete text.
